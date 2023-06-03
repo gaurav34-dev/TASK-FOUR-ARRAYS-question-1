@@ -1,23 +1,30 @@
+import java.util.HashSet;
+import java.util.Scanner;
 class Main{
   public static void main(String[]args)
   {
-    int a[]={1,2,2,3,3,4,4,5,5,6,6,7,7,8,8};
-      int[] temp=new int[a.length];
-
-    int j=0;
-    for(int i=0;i<a.length-1;i++)
+    //int a[]=new a[15];
+    int[] a = new int[20];
+    int i;
+    System.out.println("enter the range of array");
+    Scanner s= new Scanner(System.in);
+    int length=s.nextInt();
+    System.out.println("enter the elements in an array");
+    for(i=0;i<length;i++)
       {
-        if(a[i]!=a[i+1])
-        {
-          temp[j]=a[i];
-          j++;
-        }
+        a[i]=s.nextInt();
       }
-    temp[j]=a[a.length-1];
+HashSet<Integer> hs = new HashSet<Integer>();
+    for(i=0;i<length;i++)
+      {
+        hs.add(a[i]);
+      }
 
-  for(int i=0;i<temp.length;i++)
-    {
-      System.out.println(temp[i]+" ");
-    }
+    for(int no:hs)
+      {
+        System.out.print(no+"");
+      }
+    
+
   }
 }
